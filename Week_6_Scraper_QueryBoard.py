@@ -43,6 +43,7 @@ try:
     df = pd.read_html(TAI_ind, encoding='cp950')
 except Exception as e:
     print("An error occurred:", str(e))
+    console.log(str(e))
 
 
 
