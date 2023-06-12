@@ -147,7 +147,7 @@ df2.head()
 # In[11]:
 
 
-df1=pd.read_csv("data/TWSE_TW-1.csv")
+df1=pd.read_csv("TWSE_TW-1.csv")
 df1[df1['Symbol'].str.contains('3008.TW')]
 
 
