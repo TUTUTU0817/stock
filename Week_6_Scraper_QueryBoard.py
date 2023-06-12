@@ -38,12 +38,7 @@ import pandas as pd
 
 TAI_ind='https://isin.twse.com.tw/isin/C_public.jsp?strMode=2'
 # data encoded in Traditional Chinese, 資料使用繁體中文編碼
-# df=pd.read_html(TAI_ind,encoding='cp950')
-try:
-    df = pd.read_html(TAI_ind, encoding='cp950')
-except Exception as e:
-    print("An error occurred:", str(e))
-    console.log(str(e))
+df=pd.read_html(TAI_ind,encoding='cp950')
 
 
 
