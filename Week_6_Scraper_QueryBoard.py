@@ -38,7 +38,7 @@ import pandas as pd
 
 TAI_ind='https://isin.twse.com.tw/isin/C_public.jsp?strMode=2'
 # data encoded in Traditional Chinese, 資料使用繁體中文編碼
-# df=pd.read_html(TAI_ind,encoding='cp950')
+df=pd.read_html(TAI_ind,encoding='cp950')
 
 
 
@@ -48,18 +48,18 @@ TAI_ind='https://isin.twse.com.tw/isin/C_public.jsp?strMode=2'
 
 # the data in the first page (table)
 # only the first feature, 有價證券代號及名稱, we want, 
-# df[0]
+df[0]
 
 
 # In[20]:
 
 
-# df[0][0][2:]
+df[0][0][2:]
 #   first table, 第一個表格
 #      feature 0, 欄位 0
 #         start from third rows, i.e. 2
 
-# df[0][0][2:].values
+df[0][0][2:].values
 
 
 # In[21]:
@@ -67,29 +67,29 @@ TAI_ind='https://isin.twse.com.tw/isin/C_public.jsp?strMode=2'
 
 # extract data and split by '\u3000', 利用字元 '\u3000' 將每一個欄位分成兩個, 
 # create two-column DataFrame, 
-# data = df[0][0][2:].str.split('\u3000', n=1, expand=True)
+data = df[0][0][2:].str.split('\u3000', n=1, expand=True)
 
 # create two-column DataFrame, 將上述的兩個公開的資料成為新的欄位
-# df1 = pd.DataFrame({'Symbol': data[0], 'Name': data[1]})
+df1 = pd.DataFrame({'Symbol': data[0], 'Name': data[1]})
 
 # convert ticker to yahoo tick,  將上市公司的代碼變成 yahoo 代碼
-# df1['Symbol'] = df1['Symbol'].apply(lambda x: x + '.TW')
+df1['Symbol'] = df1['Symbol'].apply(lambda x: x + '.TW')
 
 
 # In[22]:
 
 
-# df1.head()
+df1.head()
 
 
 # In[24]:
 
 
 # remove any null value in cell, 去掉沒資料的欄位
-# df1.fillna('', inplace=True)
+df1.fillna('', inplace=True)
 
 # and save to a file, used in later, 並存成檔案供日後使用
-# df1.to_csv("TWSE_TW-1.csv",index=False)
+df1.to_csv("TWSE_TW-1.csv",index=False)
 
 
 # Techniques by ChatGPT
