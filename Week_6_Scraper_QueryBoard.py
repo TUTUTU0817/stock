@@ -38,7 +38,9 @@ import pandas as pd
 
 TAI_ind='https://isin.twse.com.tw/isin/C_public.jsp?strMode=2'
 # data encoded in Traditional Chinese, 資料使用繁體中文編碼
-df=pd.read_html(TAI_ind,encoding='cp950')
+# df=pd.read_html(TAI_ind,encoding='cp950')
+df=pd.read_html(TAI_ind,encoding='utf-8')
+
 
 
 # In[3]:
