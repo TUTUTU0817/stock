@@ -228,12 +228,12 @@ def get_client_ip():
 # example usage
 ip_address = get_client_ip()
 if ip_address:
-    st.write('Client IP Address:', ip_address)
-#     print('Client IP Address:', ip_address)
-#     print(is_client_from_taiwan(ip_address))
+#     st.write('Client IP Address:', ip_address)
+    print('Client IP Address:', ip_address)
+    print(is_client_from_taiwan(ip_address))
 else:
-    st.write('Failed to retrieve client IP address')
-#     print('Failed to retrieve client IP address')
+#     st.write('Failed to retrieve client IP address')
+    print('Failed to retrieve client IP address')
 
 
 # In[15]:
