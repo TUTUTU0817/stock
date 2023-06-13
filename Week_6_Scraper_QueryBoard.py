@@ -48,18 +48,18 @@ df=pd.read_html(TAI_ind,encoding='cp950')
 
 # the data in the first page (table)
 # only the first feature, 有價證券代號及名稱, we want, 
-df[0]
+# df[0]
 
 
 # In[20]:
 
 
-df[0][0][2:]
+# df[0][0][2:]
 #   first table, 第一個表格
 #      feature 0, 欄位 0
 #         start from third rows, i.e. 2
 
-df[0][0][2:].values
+# df[0][0][2:].values
 
 
 # In[21]:
