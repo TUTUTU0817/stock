@@ -228,12 +228,12 @@ def get_client_ip():
 # example usage
 ip_address = get_client_ip()
 if ip_address:
-    #st.write('Client IP Address:', ip_address)
-    print('Client IP Address:', ip_address)
-    print(is_client_from_taiwan(ip_address))
+    st.write('Client IP Address:', ip_address)
+#     print('Client IP Address:', ip_address)
+#     print(is_client_from_taiwan(ip_address))
 else:
-    #st.write('Failed to retrieve client IP address')
-    print('Failed to retrieve client IP address')
+    st.write('Failed to retrieve client IP address')
+#     print('Failed to retrieve client IP address')
 
 
 # In[15]:
@@ -255,10 +255,10 @@ def locate():
 # import streamlit as st
 # 
 # import requests
-# import geoip2.database
+import geoip2.database
 # 
 # # path to GeoLite2-Country.mmdb file, download it to the sub-folder: data
-# reader = geoip2.database.Reader('data/GeoLite2-Country.mmdb')
+reader = geoip2.database.Reader('data/GeoLite2-Country.mmdb')
 # 
 # # translations
 translations = {
@@ -281,12 +281,12 @@ translations = {
 }
 
 # read data
-#TAI_ind = 'https://isin.twse.com.tw/isin/C_public.jsp?strMode=2'
-#df = pd.read_html(TAI_ind, encoding='cp950')
-#df1 = pd.DataFrame(df[0][0][2:].str.split('\u3000').tolist(), columns=['Symbol', 'Name'])
+TAI_ind = 'https://isin.twse.com.tw/isin/C_public.jsp?strMode=2'
+df = pd.read_html(TAI_ind, encoding='cp950')
+df1 = pd.DataFrame(df[0][0][2:].str.split('\u3000').tolist(), columns=['Symbol', 'Name'])
 
 #df1=pd.read_csv("TWSE.csv",index_col=0)
-df1=pd.read_csv("data/TWSE_TW-1.csv")
+df1=pd.read_csv("TWSE_TW-1.csv")
 df1.fillna('', inplace=True)
 # set up state
 state = st.session_state
@@ -324,12 +324,12 @@ state.search_term = ''
 
 ### the original code without detecting client's location
 
-#if 'lang' not in state:
-#    state.lang = 'en'
-#if 'search_by' not in state:
-#    state.search_by = translations[state.lang]['symbol_option']
-#if 'search_term' not in state:
-#    state.search_term = ''
+if 'lang' not in state:
+   state.lang = 'en'
+if 'search_by' not in state:
+   state.search_by = translations[state.lang]['symbol_option']
+if 'search_term' not in state:
+   state.search_term = ''
     
 # set up sidebar
 st.sidebar.title(translations[state.lang]['language'])
@@ -376,7 +376,7 @@ st.session_state['state'] = state
 # In[13]:
 
 
-df1[df1['Symbol'].str.contains('3008')]
+# df1[df1['Symbol'].str.contains('3008')]
 
 
 # In[ ]:
