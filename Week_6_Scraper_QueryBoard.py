@@ -258,7 +258,7 @@ def locate():
 import geoip2.database
 # 
 # # path to GeoLite2-Country.mmdb file, download it to the sub-folder: data
-reader = geoip2.database.Reader('data/GeoLite2-Country.mmdb')
+reader = geoip2.database.Reader('GeoLite2-Country.mmdb')
 # 
 # # translations
 translations = {
