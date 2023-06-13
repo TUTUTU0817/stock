@@ -120,11 +120,11 @@ df1.to_csv("TWSE_TW-1.csv",index=False)
 df1=pd.read_csv("TWSE_TW-1.csv",index_col=0)
 df1.fillna('', inplace=True)
 # set up Streamlit app
-st.title("TWSE Stock Search, 台灣股票代號查詢")
+# st.title("TWSE Stock Search, 台灣股票代號查詢")
 
 # add search box and dropdown
-search_term = st.text_input("Enter search term, 輸入查詢資料:")
-search_by = st.selectbox("Search by column:", options=['公司代碼', '公司名稱'])
+# search_term = st.text_input("Enter search term, 輸入查詢資料:")
+# search_by = st.selectbox("Search by column:", options=['公司代碼', '公司名稱'])
 
 # search for matching rows
 if search_term:
