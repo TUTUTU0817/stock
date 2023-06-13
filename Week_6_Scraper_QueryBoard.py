@@ -117,8 +117,8 @@ df1.to_csv("TWSE_TW-1.csv",index=False)
 # 
 # # read data from the URL and create DataFrame
 # 
-df1=pd.read_csv("TWSE_TW-1.csv",index_col=0)
-df1.fillna('', inplace=True)
+# df1=pd.read_csv("TWSE_TW-1.csv",index_col=0)
+# df1.fillna('', inplace=True)
 # set up Streamlit app
 # st.title("TWSE Stock Search, 台灣股票代號查詢")
 
@@ -127,14 +127,14 @@ df1.fillna('', inplace=True)
 # search_by = st.selectbox("Search by column:", options=['公司代碼', '公司名稱'])
 
 # search for matching rows
-if search_term:
-    if search_by == 'Symbol':
-        result = df1[df1['Symbol'].str.contains(search_term)]
-    elif search_by == 'Name':
-        result = df1[df1['Name'].str.contains(search_term)]
-    else:
-        result = pd.DataFrame()
-    st.write(result)
+# if search_term:
+#     if search_by == 'Symbol':
+#         result = df1[df1['Symbol'].str.contains(search_term)]
+#     elif search_by == 'Name':
+#         result = df1[df1['Name'].str.contains(search_term)]
+#     else:
+#         result = pd.DataFrame()
+#     st.write(result)
 # ```
 
 # In[27]:
